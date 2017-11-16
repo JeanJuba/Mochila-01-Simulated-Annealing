@@ -5,6 +5,8 @@
  */
 package simulatedannealing;
 
+import util.SimAnnel;
+
 /**
  *
  * @author Usuario
@@ -16,6 +18,9 @@ public class SimulatedAnnealing {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        SimAnnel sim = new SimAnnel();
+        sim.run();
+        sim.printBest();
     }
     
 }
