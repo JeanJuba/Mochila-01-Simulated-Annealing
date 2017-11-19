@@ -15,8 +15,8 @@ import java.util.Random;
 public class SimAnnel {
 
     private double temperaturaMinima = 0.0001;
-    private double temperaturaAtual = 1600;
-    private double fatorAlpha = 0.99;
+    private double temperaturaAtual = 800;
+    private double fatorAlpha = 0.9999;
     private int pesoMax = 400;
     
     private String[] itemNames;
@@ -87,7 +87,7 @@ public class SimAnnel {
                     }
                 }else{
                     //Implementar função fórmula de aceitação
-                    int x = zeroOne();
+                    double x = zeroOne();
                     if(x < funcaoAceitacao(temperaturaAtual, variacao)){
                         //System.out.println("Aceitou");
                         solucaoOriginal = solucaoTemp.clone();
@@ -111,8 +111,8 @@ public class SimAnnel {
         return new Random().nextInt(itemNames.length);
     }
 
-    private int zeroOne(){
-        return new Random().nextInt(2);
+    private double zeroOne(){
+        return new Random().nextDouble();
     }
     
     private double calculateValue(int[] solucao) {
